@@ -59,6 +59,19 @@
   }
 }
 
+.nav-link{
+  @apply list-none inline-block mx-3;
+}
+.nav-link:hover{
+  @apply text-red-700;
+}
+.nav-link > span {
+  @apply block max-w-0 transition-all duration-300 h-0.5 bg-red-700;
+}
+.nav-link:hover > span {
+  @apply block max-w-full transition-all duration-300 h-0.5 bg-red-700;
+}
+
 @layer base {
   * {
     @apply border-border;
