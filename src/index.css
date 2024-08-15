@@ -59,7 +59,8 @@
   }
 }
 
-.nav-link{
+/* Navigation Links */
+.nav-link {
   @apply list-none inline-block mx-3;
 }
 .nav-link:hover{
@@ -71,6 +72,15 @@
 .nav-link:hover > span {
   @apply block max-w-full transition-all duration-300 h-0.5 bg-red-700;
 }
+
+/* Horizontal Scroll Items */
+.scroll-item {
+  @apply inline-block w-40 sm:w-56 lg:w-80 mx-2 overflow-hidden
+}
+.scroll-item > img {
+  @apply object-cover h-56 sm:h-72 md:h-[50vh] lg:h-[60vh]
+}
+
 
 @layer base {
   * {

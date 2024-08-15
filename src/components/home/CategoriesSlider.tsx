@@ -8,21 +8,21 @@ const CategoriesSlider = () => {
     return (
             <ScrollArea className="my-8 whitespace-nowrap">
                 <div className="flex px-2 justify-between">
-                    <span className="inline-block w-40 sm:w-56 lg:w-80 mx-2 overflow-hidden">
-                        <img className="object-cover h-56 sm:h-72 md:h-[50vh] lg:h-[60vh]" src={Bedroom} alt="category" />
-                        <div className="inelin-block text-center">Bedroom</div>
+                    <span className="scroll-item">
+                        <img src={Bedroom} alt="category" />
+                        <div className="text-center">Bedroom</div>
                     </span>
-                    <span className="inline-block w-40 sm:w-56 lg:w-80 mx-2 overflow-hidden">
-                        <img className="object-cover h-56 sm:h-72 md:h-[50vh] lg:h-[60vh]" src={Sofa} alt="category" />
-                        <div className="inelin-block text-center">Sofa</div>
+                    <span className="scroll-item">
+                        <img src={Sofa} alt="category" />
+                        <div className="text-center">Sofa</div>
                     </span>
-                    <span className="inline-block w-40 sm:w-56 lg:w-80 mx-2 overflow-hidden">
-                        <img className="object-cover h-56 sm:h-72 md:h-[50vh] lg:h-[60vh]" src={Salon} alt="category" />
-                        <div className="inelin-block text-center">Salon</div>
+                    <span className="scroll-item">
+                        <img src={Salon} alt="category" />
+                        <div className="text-center">Salon</div>
                     </span>
-                    <span className="inline-block w-40 sm:w-56 lg:w-80 mx-2 overflow-hidden">
-                        <img className="object-cover h-56 sm:h-72 md:h-[50vh] lg:h-[60vh]" src={LShapeSofa} alt="category" />
-                        <div className="inelin-block text-center">L-Shape Sofa</div>
+                    <span className="scroll-item">
+                        <img src={LShapeSofa} alt="category" />
+                        <div className="text-center">L-Shape Sofa</div>
                     </span>
                 </div>
                 <ScrollBar className="hidden" orientation="horizontal" />
