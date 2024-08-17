@@ -63,30 +63,27 @@
 .nav-link {
   @apply list-none inline-block mx-3;
 }
-.nav-link:hover{
-  @apply text-red-700;
-}
 .nav-link > span {
-  @apply block max-w-0 transition-all duration-300 h-0.5 bg-red-700;
+  @apply block max-w-0 transition-all duration-300 h-0.5;
 }
 .nav-link:hover > span {
-  @apply block max-w-full transition-all duration-300 h-0.5 bg-red-700;
+  @apply block max-w-full transition-all duration-300 h-0.5;
 }
+
 
 /* Horizontal Scroll Items */
 .scroll-item {
-  @apply inline-block w-40 sm:w-56 lg:w-80 mx-2 overflow-hidden
+  @apply inline-block w-40 sm:w-56 md:w-72 lg:w-96 mx-2
 }
 .scroll-item > img {
-  @apply object-cover h-56 sm:h-72 md:h-[50vh] lg:h-[60vh]
+  @apply object-cover h-56 sm:h-72 md:h-[40vh] md:w-72 lg:h-[55vh] lg:w-96 z-0
 }
 
-
-@layer base {
+/* @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
   }
-}
+} */
