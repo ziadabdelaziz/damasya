@@ -1,4 +1,5 @@
 import CategoriesSlider from "./CategoriesSlider";
+import FeatureSection from "./FeatureSection";
 import Hero from "./Hero";
 
 const Home = () => {
@@ -6,6 +7,8 @@ const Home = () => {
         <div>
             <Hero />
             <CategoriesSlider />
+            <FeatureSection />
+            <FeatureSection />
         </div>
      );
 }
