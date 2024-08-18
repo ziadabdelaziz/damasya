@@ -32,10 +32,8 @@ const NavBar = () => {
                     </li>
                 </ul>
             </nav>
-            <div onClick={()=>setIsOpenMenu(!isOpenMenu)} 
-                    className={`fixed right-1 top-1 inline sm:hidden ${isOpenMenu? 'text-white' : ''} scale-75 z-50`}
-            >
-                <Hamburger />
+            <div className={`fixed -right-1 -top-1 px-2.5 py-2 rounded-lg bg-white/50 inline sm:hidden scale-50 z-50`}>
+                <Hamburger onToggle={()=>setIsOpenMenu(!isOpenMenu)} color={`${isOpenMenu? 'white' : 'black'}` }/>
             </div>
             <NavMenu showMenu={isOpenMenu} />
         </div>
