@@ -1,5 +1,6 @@
 import CategoriesSlider from "./CategoriesSlider";
 import FeatureSection from "./FeatureSection";
+import Footer from "./Footer";
 import Hero from "./Hero";
 
 const Home = () => {
@@ -7,8 +8,9 @@ const Home = () => {
         <div>
             <Hero />
             <CategoriesSlider />
-            <FeatureSection />
-            <FeatureSection />
+            <FeatureSection isReverse={true} />
+            <FeatureSection isReverse={false} />
+            <Footer />
         </div>
      );
 }
