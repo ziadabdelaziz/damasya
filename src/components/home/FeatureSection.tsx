@@ -16,7 +16,7 @@ const FeatureSection: React.FC<SectionLayout> = ({isReverse}) => {
                 <span className='p-5 m-auto md:w-2/5 text-center'>
                     <p className='text-4xl font-bold mb-5'>Header</p>
                     <p className='text-gray-600'>Some content that attracts the users to shop</p>
-                    <button className='mt-5 px-3 py-1 bg-app-secondary text-white hover:drop-shadow-lg hover:bg-opacity-80'>Shop Now</button>
+                    <button className='mt-5 px-3 py-1 bg-app-action text-white hover:drop-shadow-lg hover:bg-opacity-90'>Shop Now</button>
                 </span>
             </div>
         </div>
