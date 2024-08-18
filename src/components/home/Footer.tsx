@@ -4,22 +4,27 @@ import { CiFacebook } from "react-icons/ci";
 
 const Footer = () => {
     return (
-        <div className="px-6 py-2 md:py-4 bg-app-secondary/90 text-gray-300">
-            <div className="my-4 text-2xl text-white">Damasya</div>
+        <div className="pr-6 pl-3 py-2 md:py-4 bg-app-secondary/90 text-gray-300">
+            <div className="my-4 ml-3 text-2xl text-white">Damasya</div>
             <div className="flex flex-wrap">
                 <span className="inline-block w-full md:w-1/3 mb-8">
-                    <span className="inline-block pb-2 text-xl text-white">Pages</span>
-                    <div className='underline'>
-                        <Link to='/'>Home</Link>
-                    </div>
-                    <div className='underline'>
-                        <Link to='/products'>Products</Link>
-                    </div>
-                    <div className='underline'>
-                        <Link to='/about'>About Us</Link>
-                    </div>
+                    <span className="inline-block pb-2 ml-3 text-xl text-white">Pages</span>    
+                    <ul className="w-40">
+                        <li className='nav-link hover:text-app-action'>
+                            <Link to='/'>Home</Link>
+                            <span className="bg-app-action"></span>
+                        </li>
+                        <li className='nav-link hover:text-app-action'>
+                            <Link to='/products'>Products</Link>
+                            <span className="bg-app-action"></span>
+                        </li>
+                        <li className='nav-link hover:text-app-action'>
+                            <Link to='/about'>About Us</Link>
+                            <span className="bg-app-action"></span>
+                        </li>
+                    </ul> 
                 </span>
-                <span className="inline-block w-full md:w-1/3 mb-8">
+                <span className="inline-block w-full md:w-1/3 mb-8 ml-3">
                     <span className="inline-block pb-2 text-xl text-white">Contact</span>
                     <div className="my-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 inline-block">
@@ -47,12 +52,18 @@ const Footer = () => {
                             <span className="ml-2">Damietta, Egypt</span>
                     </div>
                 </span>
-                <span className="inline-block w-full md:w-1/3 mb-8">
+                <span className="inline-block w-full md:w-1/3 mb-8 ml-3">
                     <span className="inline-block pb-2 text-xl text-white">Connect</span>
                     <div>
-                        <FaWhatsapp className="inline-block text-4xl mx-1" />
-                        <FaInstagram className="inline-block text-4xl mx-1" />
-                        <CiFacebook className="inline-block text-4xl mx-1" />
+                        <a href="">
+                            <FaWhatsapp className="inline-block text-4xl mx-1 hover:transition-all duration-300 hover:scale-125 hover:text-app-action" />
+                        </a>
+                        <a href="">
+                            <FaInstagram className="inline-block text-4xl mx-1 hover:transition-all duration-300 hover:scale-125 hover:text-app-action" />
+                        </a>
+                        <a href="">
+                            <CiFacebook className="inline-block text-4xl mx-1 hover:transition-all duration-300 hover:scale-125 hover:text-app-action" />
+                        </a>
                     </div>
                 </span>
             </div>
