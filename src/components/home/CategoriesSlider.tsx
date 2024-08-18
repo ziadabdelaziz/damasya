@@ -9,20 +9,28 @@ const CategoriesSlider = () => {
             <ScrollArea className="my-8 whitespace-nowrap">
                 <div className="flex px-2 justify-between">
                     <span className="scroll-item">
-                        <img src={Bedroom} alt="category" />
-                        <div className="text-center">Bedroom</div>
+                        <img 
+                            className="hover:scale-105 hover:shadow-lg"
+                            src={Bedroom} alt="Bedroom" />
+                        <div className="text-center mt-2">Bedroom</div>
                     </span>
                     <span className="scroll-item">
-                        <img src={Sofa} alt="category" />
-                        <div className="text-center">Sofa</div>
+                        <img 
+                            className="hover:scale-105 hover:shadow-lg"
+                            src={Sofa} alt="Sofa" />
+                        <div className="text-center mt-2">Sofa</div>
                     </span>
                     <span className="scroll-item">
-                        <img src={Salon} alt="category" />
-                        <div className="text-center">Salon</div>
+                        <img 
+                            className="hover:scale-105 hover:shadow-lg"
+                            src={Salon} alt="Saloln" />
+                        <div className="text-center mt-2">Salon</div>
                     </span>
                     <span className="scroll-item">
-                        <img src={LShapeSofa} alt="category" />
-                        <div className="text-center">L-Shape Sofa</div>
+                        <img 
+                            className="hover:scale-105 hover:shadow-lg"
+                            src={LShapeSofa} alt="L-Shape Sofa" />
+                        <div className="text-center mt-2">L-Shape Sofa</div>
                     </span>
                 </div>
                 <ScrollBar className="hidden" orientation="horizontal" />
