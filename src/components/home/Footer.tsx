@@ -5,7 +5,7 @@ import { CiFacebook } from "react-icons/ci";
 const Footer = () => {
     return (
         <div className="pr-6 pl-3 py-2 md:py-4 bg-app-secondary/90 text-gray-300">
-            <div className="my-4 ml-3 text-2xl text-white">Damasya</div>
+            <div className="my-4 ml-3 md:ml-0 text-2xl text-white">Damasya</div>
             <div className="flex flex-wrap">
                 <span className="inline-block w-full md:w-1/3 mb-8">
                     <span className="inline-block pb-2 ml-3 text-xl text-white">Pages</span>    
@@ -24,7 +24,7 @@ const Footer = () => {
                         </li>
                     </ul> 
                 </span>
-                <span className="inline-block w-full md:w-1/3 mb-8 ml-3">
+                <span className="inline-block w-full md:w-1/3 mb-8 ml-3 md:ml-0">
                     <span className="inline-block pb-2 text-xl text-white">Contact</span>
                     <div className="my-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 inline-block">
@@ -52,7 +52,7 @@ const Footer = () => {
                             <span className="ml-2">Damietta, Egypt</span>
                     </div>
                 </span>
-                <span className="inline-block w-full md:w-1/3 mb-8 ml-3">
+                <span className="inline-block w-full md:w-1/3 mb-8 ml-3 md:ml-0">
                     <span className="inline-block pb-2 text-xl text-white">Connect</span>
                     <div>
                         <a href="">
