@@ -5,6 +5,7 @@ import Products from './components/products/Products';
 import About from './components/about/About';
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
 import LogoImage from '@/assets/logo.jpg';
+import AuthenticationPage from './components/admin/AuthenticationPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/products' element={<Products />} />
           <Route path='/about' element={<About />} />
+          <Route path='/admin007' element={<AuthenticationPage />} />
         </Routes>
         <FloatingWhatsApp phoneNumber='+201060719095' accountName='Damasya' avatar={LogoImage} allowClickAway={true} buttonClassName='bg-green-700' />
       </main>
