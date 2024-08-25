@@ -6,6 +6,7 @@ import About from './components/about/About';
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
 import LogoImage from '@/assets/logo.jpg';
 import AuthenticationPage from './components/admin/AuthenticationPage';
+import NotFound from './components/notFound/NotFound';
 
 function App() {
   console.log(useLocation().pathname);
@@ -18,6 +19,7 @@ function App() {
           <Route path='/products' element={<Products />} />
           <Route path='/about' element={<About />} />
           <Route path='/admin007' element={<AuthenticationPage />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
         {
           useLocation().pathname != '/admin007' && <FloatingWhatsApp phoneNumber='+201060719095' accountName='Damasya' avatar={LogoImage} allowClickAway={true} buttonClassName='bg-green-700' />
