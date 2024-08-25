@@ -16,19 +16,19 @@ const CategoriesSlider = () => {
                     </span>
                     <span className="scroll-item">
                         <img 
-                            className="hover:scale-105 hover:shadow-lg hover:transition-all duration-300"
+                            className="hover:scale-105 hover:shadow-lg hover:transition-all duration-500"
                             src={Sofa} alt="Sofa" />
                         <div className="text-center mt-2">Sofa</div>
                     </span>
                     <span className="scroll-item">
                         <img 
-                            className="hover:scale-105 hover:shadow-lg hover:transition-all duration-300"
+                            className="hover:scale-105 hover:shadow-lg hover:transition-all duration-500"
                             src={Salon} alt="Saloln" />
                         <div className="text-center mt-2">Salon</div>
                     </span>
                     <span className="scroll-item">
                         <img 
-                            className="hover:scale-105 hover:shadow-lg hover:transition-all duration-300"
+                            className="hover:scale-105 hover:shadow-lg hover:transition-all duration-500"
                             src={LShapeSofa} alt="L-Shape Sofa" />
                         <div className="text-center mt-2">L-Shape Sofa</div>
                     </span>

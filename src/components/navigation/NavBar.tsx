@@ -8,7 +8,7 @@ const NavBar = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
 
     return ( 
-        <div className="fixed w-full pb-0 bg-transparet shadow-md z-20">
+        <div className="fixed w-full pb-0 bg-app-primary/30 shadow-md z-20">
             <nav className='flex justify-between py-1 sm:py-4 backdrop-blur-sm'>
                 <div className="ml-2 my-2 pb-0.5 text-xl sm:my-auto inline-block">
                     Damasya
