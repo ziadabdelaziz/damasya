@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import NavBar from './components/navigation/NavBar';
 import Home from './components/home/Home';
 import Products from './components/products/Products';
@@ -8,6 +8,7 @@ import LogoImage from '@/assets/logo.jpg';
 import AuthenticationPage from './components/admin/AuthenticationPage';
 
 function App() {
+  console.log(useLocation().pathname);
   return (
     <div className="App text-lg">
       <NavBar />
@@ -18,7 +19,9 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/admin007' element={<AuthenticationPage />} />
         </Routes>
-        <FloatingWhatsApp phoneNumber='+201060719095' accountName='Damasya' avatar={LogoImage} allowClickAway={true} buttonClassName='bg-green-700' />
+        {
+          useLocation().pathname != '/admin007' && <FloatingWhatsApp phoneNumber='+201060719095' accountName='Damasya' avatar={LogoImage} allowClickAway={true} buttonClassName='bg-green-700' />
+        }
       </main>
       </div>
   );
