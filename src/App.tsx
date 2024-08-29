@@ -9,26 +9,32 @@ import AuthenticationPage from './components/admin/AuthenticationPage';
 import NotFound from './components/notFound/NotFound';
 import AdminContext, { AdminState } from './app/admin-context';
 import { useState } from 'react';
+import { useCookies } from 'react-cookie';
 
 function App() {
 
-  const [isAdminState, setIsAdminState]  = useState<boolean>(false);
+  const [cookies, setIsAdminCookie, removeIsAdminCookie] = useCookies(['isAdmin']);
+  const [isAdminState, setIsAdminState]  = useState<boolean>(cookies['isAdmin'] ?? false);
 
   const adminState: AdminState = {
     isAdmin: isAdminState,
     adminSignIn: (email: String, password: String) : boolean => {
       if(!email || !password) return false
-      
+
       if (email.length === 0 || password.length === 0) return false
 
       if (email === 'damasya.du.admin@gmail.com' && password === 'dUfR@123') {
+        setIsAdminCookie('isAdmin', true);
         setIsAdminState(true);
         return true
       }
 
       return false;
     },
-    adminSignOut: () => setIsAdminState(false)
+    adminSignOut: () => {
+      setIsAdminCookie('isAdmin', false);
+      setIsAdminState(false);
+    }
   };
 
   return (
