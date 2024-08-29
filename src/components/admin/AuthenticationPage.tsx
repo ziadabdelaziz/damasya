@@ -1,24 +1,41 @@
-import { useRef, useContext} from "react";
+import { useRef, useContext, useState} from "react";
 import AdminContext, { AdminState }  from '../../app/admin-context.tsx';
 import { useNavigate } from "react-router-dom";
 
 const AuthenticationPage = () => {
+    // enum FormState {
+    //     Init,
+    //     Loading,
+    //     Valid,
+    //     Invalid,
+    // }
+
     const adminContext = useContext<AdminState>(AdminContext);
+    // const [formState, setFormState] = useState<FormState>(FormState.Init);
 
     const emailRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
 
     const navigate = useNavigate();
 
-    const formAuth = (event: React.FormEvent) => {
+    const formAuth = async (event: React.FormEvent) => {
         event.preventDefault();
-
-        const isAdmin: boolean = adminContext.adminSignIn(
+        
+        // setFormState(FormState.Loading)
+        console.log('sent');
+        const isValid: boolean = await adminContext.adminSignIn(
             emailRef.current!.value,
             passwordRef.current!.value,
         )
-
-        if (isAdmin) navigate("/");
+        console.log('back');
+        if (isValid) {
+            console.log('should navigate');
+            // setFormState(FormState.Valid);
+            navigate("/");
+        } else {
+            console.log('won\'t navigate');
+            // setFormState(FormState.Invalid);
+        }
     }
 
     return (

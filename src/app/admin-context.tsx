@@ -1,11 +1,13 @@
 import { createContext } from "react";
+import { auth } from '../firebase/fire';
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export class AdminState {
     isAdmin: boolean;
     setState: Function;
     setCookie: Function;
     removeCookie: Function;
-    
+
     constructor(isAdmin: boolean, setState: Function, setCookie: Function, removeCookie: Function){
         this.isAdmin = isAdmin;
         this.setState = setState;
@@ -13,18 +15,24 @@ export class AdminState {
         this.removeCookie = removeCookie;
     }
 
-    adminSignIn(email: String, password: String) : boolean {
+    async adminSignIn(email: string, password: string) : Promise<boolean> {
         if(!email || !password) return false
-
+        
         if (email.length === 0 || password.length === 0) return false
-
-        if (email === 'damasya.du.admin@gmail.com' && password === 'dUfR@123') {
+        
+        try{
+            await signInWithEmailAndPassword(auth, email, password)
+            
             this.setCookie('isAdmin', true);
             this.setState(true);
-            return true
+            return true;
         }
-
-        return false;
+        catch {
+            this.removeCookie();
+            this.setState(false);
+            alert('Error: Invalid email or password');
+            return false;
+        };
     }
 
     adminSignOut() {
