@@ -30,7 +30,6 @@ export class AdminState {
         catch {
             this.removeCookie();
             this.setState(false);
-            alert('Error: Invalid email or password');
             return false;
         };
     }
