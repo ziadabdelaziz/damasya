@@ -16,29 +16,8 @@ function App() {
   const [cookies, setIsAdminCookie, removeIsAdminCookie] = useCookies(['isAdmin']);
   const [isAdminState, setIsAdminState]  = useState<boolean>(cookies['isAdmin'] ?? false);
 
-  const adminState: AdminState = {
-    isAdmin: isAdminState,
-    adminSignIn: (email: String, password: String) : boolean => {
-      if(!email || !password) return false
-
-      if (email.length === 0 || password.length === 0) return false
-
-      if (email === 'damasya.du.admin@gmail.com' && password === 'dUfR@123') {
-        setIsAdminCookie('isAdmin', true);
-        setIsAdminState(true);
-        return true
-      }
-
-      return false;
-    },
-    adminSignOut: () => {
-      setIsAdminCookie('isAdmin', false);
-      setIsAdminState(false);
-    }
-  };
-
   return (
-    <AdminContext.Provider value={adminState}>
+    <AdminContext.Provider value={new AdminState(isAdminState, setIsAdminState, setIsAdminCookie, removeIsAdminCookie)}>
       <div className="App text-lg">
         <NavBar />
         <main className='relative z-0'>
