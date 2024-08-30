@@ -33,7 +33,11 @@ const NavBar = () => {
                         <Link to='/'>Contact</Link>
                         <span className='bg-app-action'></span>
                     </li>
-                    {adminState.isAdmin && <span onClick={()=>{adminState.adminSignOut()}} className='inline-block bg-white/50 mx-2 rounded-md'><PiSignOutBold className='inline-block text-red-600 text-3xl' /></span>}
+                    {adminState.isAdmin && 
+                        <span onClick={()=>{adminState.adminSignOut()}} className='inline-block bg-white/50 mx-2 rounded-md'>
+                            <PiSignOutBold className='inline-block text-red-600 text-3xl transition-colors duration-200 hover:text-red-600/80 hover:shadow-md' />
+                        </span>
+                    }
                 </ul>
             </nav>
             <div className={`fixed -right-1 -top-1 px-2.5 py-2 rounded-lg bg-white/50 inline sm:hidden scale-50 z-50`}>

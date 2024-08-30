@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { auth } from '../firebase/fire';
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 export class AdminState {
     isAdmin: boolean;
@@ -34,9 +34,19 @@ export class AdminState {
         };
     }
 
-    adminSignOut() {
+    async adminSignOut() {
+        await signOut(auth);
         this.removeCookie('isAdmin');
         this.setState(false);
+    }
+
+    async adminIsLoggedIn() {
+        let isLogged = false;
+        await onAuthStateChanged(auth, (user) => {
+            user ? isLogged = true : isLogged = false;
+        });
+
+        return isLogged;
     }
 }
 
