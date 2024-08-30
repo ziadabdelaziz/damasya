@@ -1,15 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
+import AdminContext, { AdminState } from './app/admin-context';
+import { useState } from 'react';
+import { useCookies } from 'react-cookie';
+
 import NavBar from './components/navigation/NavBar';
 import Home from './components/home/Home';
 import Products from './components/products/Products';
 import About from './components/about/About';
-import { FloatingWhatsApp } from 'react-floating-whatsapp'
 import LogoImage from '@/assets/logo.jpg';
 import AuthenticationPage from './components/admin/AuthenticationPage';
 import NotFound from './components/notFound/NotFound';
-import AdminContext, { AdminState } from './app/admin-context';
-import { useState } from 'react';
-import { useCookies } from 'react-cookie';
 
 function App() {
 
