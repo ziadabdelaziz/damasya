@@ -29,7 +29,7 @@ function App() {
             <Route path='*' element={<NotFound />} />
           </Routes>
           {
-            useLocation().pathname != '/admin007' && <FloatingWhatsApp phoneNumber='+201060719095' accountName='Damasya' avatar={LogoImage} allowClickAway={true} buttonClassName='bg-green-700' />
+            !isAdminState && <FloatingWhatsApp phoneNumber='+201060719095' accountName='Damasya' avatar={LogoImage} allowClickAway={true} buttonClassName='bg-green-700' />
           }
         </main>
       </div>
