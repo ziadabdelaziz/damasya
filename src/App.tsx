@@ -14,6 +14,7 @@ import NotFound from './components/notFound/NotFound';
 import ProductsContext, { ProductsState } from './app/products-context';
 import { Product } from './models/product';
 import { fetchProducts } from './data/firestore';
+import AddProductPage from './components/addProduct/AddProductPage';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
               <Route path='/products' element={<Products />} />
               <Route path='/about' element={<About />} />
               <Route path='/admin007' element={<AuthenticationPage />} />
+              <Route path='/add-product' element={<AddProductPage />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
             {

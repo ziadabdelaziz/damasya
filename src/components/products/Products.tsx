@@ -1,9 +1,6 @@
-import { useContext } from "react";
 import ProductsList from "./ProductsList";
-import ProductsContext, { ProductsState } from "../../app/products-context";
 
 const Products = () => {
-    const productsState = useContext<ProductsState>(ProductsContext);
 
     return ( 
         <div className="items-center flex-col pt-20">
@@ -11,7 +8,20 @@ const Products = () => {
                 <h1 className="text-xl">🔥 NEW COLLECTION</h1>
                 <p className="text-gray-500 text-sm">WE GOT THE NEWEST MODELS IN THE MARKET</p>
             </div>
-            <ProductsList products={productsState.products} />
+            <ProductsList category={'new'} />
+            <br />
+            <div className="text-center">
+                <h1 className="text-xl">SOFAS</h1>
+                <p className="text-gray-500 text-sm">PROVIDING MOST COMFORTABLE SOFAS</p>
+            </div>
+            <ProductsList category={'sofa'} />
+            <br />
+            <div className="text-center">
+                <h1 className="text-xl">SALONS</h1>
+                <p className="text-gray-500 text-sm">WE GOT THE NEWEST MODELS IN THE MARKET</p>
+            </div>
+            <ProductsList category={'new'} />
+            <br />
         </div>
      );
 }

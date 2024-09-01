@@ -9,6 +9,13 @@ export class ProductsState {
         this.products = products;
         this.setState = setState;
     }
+
+    productOfCategory(category: string) : Product[] {
+        return this.products.filter((product) => {
+            if (category == 'new') return product.isNew;
+            else return product.category == category;
+        });
+    }
 }
 
 const ProductsContext = createContext<ProductsState>(

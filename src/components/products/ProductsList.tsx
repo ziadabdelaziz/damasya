@@ -1,24 +1,29 @@
 import { useContext } from "react";
-import { Product } from "../../models/product";
 import { ScrollArea, ScrollBar } from "../home/ScrollArea";
 import LShapeSofa from '@/assets/l-shape-sofa.png';
 import AdminContext from "../../app/admin-context";
 import { FaPlus } from "react-icons/fa6";
+import ProductsContext, { ProductsState } from "../../app/products-context";
+import { Link } from "react-router-dom";
 
 interface Props {
-    products: Product[];
+    category: string;
 }
 
-const ProductsList : React.FC<Props> = ({products}) => {
+const ProductsList : React.FC<Props> = ({category}) => {
     const adminState = useContext(AdminContext);
+    const productsState = useContext<ProductsState>(ProductsContext);
+    const products = productsState.productOfCategory(category);
 
-    return ( 
+    return (
         <ScrollArea className="my-2 whitespace-nowrap">
                 <div className="flex pl-5 mt-4 mb-2 justify-between">
-                    { adminState.isAdmin &&
-                        <span className="grid mr-6 w-36 h-36 bg-app-secondary/30 shadow-lg rounded-3xl hover:scale-105 transition-all duration-300">
-                            <FaPlus className="text-app-action m-auto text-5xl" />
-                        </span>
+                    {   adminState.isAdmin &&
+                        <Link to='/add-product' className="mr-6 w-36 h-36 bg-app-secondary/30 shadow-lg rounded-3xl hover:scale-105 transition-all duration-300">
+                            <div className="grid group w-36 h-36 hover:bg-white/20 rounded3xl transition-colors duration-300">
+                                <FaPlus className="text-app-action m-auto text-5xl group-hover:text-red-800 transition-colors duration-300" />
+                            </div>
+                        </Link>
                     }
                     {
                         products.map((product) => {
