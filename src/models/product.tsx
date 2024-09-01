@@ -2,9 +2,10 @@ export class Product {
     id: string;
     name: string;
     imageUrl: string;
+    category: string;
+    isNew: boolean;
     price: number;
     sale: number;
-    isNew: boolean;
     dimensions: string;
     productFeatures: string;
     productOptions: string;
@@ -13,7 +14,8 @@ export class Product {
         name: string,
         imageUrl: string,
         price: number,
-        sale: number
+        sale: number,
+        category: string,
         isNew: boolean,
         id?: string,
         dimensions: string;
@@ -23,9 +25,10 @@ export class Product {
         this.id = 'NEW';
         this.name = params.name;
         this.imageUrl = params.imageUrl;
+        this.isNew = params.isNew;
+        this.category = params.category;
         this.price = params.price;
         this.sale = params.sale;
-        this.isNew = params.isNew;
         this.dimensions = params.dimensions;
         this.productFeatures = params.productFeatures;
         this.productOptions = params.productOptions;
