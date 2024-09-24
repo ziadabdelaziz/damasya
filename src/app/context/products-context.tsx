@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Product } from "../models/product";
+import { Product } from "../../models/product";
 
 export class ProductsState {
     products: Product[];

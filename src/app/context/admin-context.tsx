@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { auth } from '../firebase/fire';
+import { auth } from '../../firebase/fire';
 import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 export class AdminState {

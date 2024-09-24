@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import AdminContext from "../../app/admin-context";
+import AdminContext from "../../app/context/admin-context";
 import { PiSignOutBold } from "react-icons/pi";
 
 interface MenuTrigger {

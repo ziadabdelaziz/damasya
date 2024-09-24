@@ -1,6 +1,12 @@
 import { collection, getDocs } from "firebase/firestore";
 import { Product } from "../models/product";
 import { db } from "../firebase/fire";
+import { storage } from "../firebase/fire";
+import {
+  getDownloadURL,
+  ref as storageRef,
+  uploadBytes,
+} from "firebase/storage";
 
 export const fetchProducts = async (setState: Function) => {
 
@@ -9,12 +15,12 @@ export const fetchProducts = async (setState: Function) => {
       let productsList: Product[] = [];
 
       querySnapshot.forEach((doc) => {
-        console.log(doc.data());
         const product = doc.data();
+
         productsList.push(new Product({
-          id: product.id,
+          id: doc.id,
           name: product.name,
-          imageUrl: product.imageUrl,
+          imagesUrl: product.imagesUrl,
           category: product.category,
           isNew: product.isNew,
           price: product.price,
@@ -22,6 +28,8 @@ export const fetchProducts = async (setState: Function) => {
           productFeatures: product.product_feature,
           productOptions: product.product_options,
           dimensions: product.dimensions,
+          description: product.description,
+          timestamp: product.timestamp,
         }));
       });
 
@@ -29,4 +37,24 @@ export const fetchProducts = async (setState: Function) => {
     } catch(e) {
       console.error('Error: '+e);
     }
+}
+
+export const uploadImage = async (imageFile: File, destination: string) : Promise<string> => {
+  const imageRef = storageRef(storage, destination);
+
+  try {
+    const snapshot = await uploadBytes(imageRef, imageFile);
+
+    const imageUrl = await getDownloadURL(snapshot.ref);
+    
+    return imageUrl;
+
+  } catch (error) {
+    console.error('Error uploading image: ', error);
+    throw "image upload error:"+error;
+  }
+}
+
+export const uploadProduct = () => {
+
 }

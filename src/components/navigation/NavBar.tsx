@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { Divide as Hamburger } from 'hamburger-react'
 import { useContext, useState } from 'react';
 import NavMenu from './NavMenu';
-import AdminContext from '../../app/admin-context';
-import { AdminState } from '../../app/admin-context';
+import AdminContext from '../../app/context/admin-context';
+import { AdminState } from '../../app/context/admin-context';
 import { PiSignOutBold } from "react-icons/pi";
 
 const NavBar = () => {

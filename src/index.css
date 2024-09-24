@@ -79,6 +79,15 @@
   @apply object-cover h-56 sm:h-72 md:h-[40vh] md:w-72 lg:h-[55vh] lg:w-96 z-0
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* @layer base {
   * {
     @apply border-border;

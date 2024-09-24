@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
-import AdminContext, { AdminState } from './app/admin-context';
+import AdminContext, { AdminState } from './app/context/admin-context';
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 
@@ -11,7 +11,7 @@ import About from './components/about/About';
 import LogoImage from '@/assets/logo.jpg';
 import AuthenticationPage from './components/admin/AuthenticationPage';
 import NotFound from './components/notFound/NotFound';
-import ProductsContext, { ProductsState } from './app/products-context';
+import ProductsContext, { ProductsState } from './app/context/products-context';
 import { Product } from './models/product';
 import { fetchProducts } from './data/firestore';
 import AddProductPage from './components/addProduct/AddProductPage';

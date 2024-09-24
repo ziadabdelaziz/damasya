@@ -1,5 +1,5 @@
 import { useRef, useContext, useState} from "react";
-import AdminContext, { AdminState }  from '../../app/admin-context.tsx';
+import AdminContext, { AdminState }  from '../../app/context/admin-context.tsx';
 import { useNavigate } from "react-router-dom";
 import { InfinitySpin } from 'react-loader-spinner'
 
@@ -24,11 +24,11 @@ const AuthenticationPage = () => {
         
         setFormState(FormState.Loading)
         console.log('sent');
-        const isValid: boolean = await adminContext.adminSignIn(
+        const isValid = await adminContext.adminSignIn(
             emailRef.current!.value,
             passwordRef.current!.value,
         )
-        console.log('back');
+        console.log('received: '+isValid);
         if (isValid) {
             console.log('should navigate');
             setFormState(FormState.Valid);
