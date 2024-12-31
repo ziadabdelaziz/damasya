@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { Product } from "../models/product";
 import { db } from "../firebase/fire";
 import { storage } from "../firebase/fire";
@@ -57,4 +57,16 @@ export const uploadImage = async (imageFile: File, destination: string) : Promis
 
 export const uploadProduct = () => {
 
+}
+
+export const deleteProduct = async (id:string) => {
+  try {
+    const docRef = doc(db, 'Products', id);
+    await deleteDoc(docRef);
+    return true;
+
+  } catch(e) {
+    console.log('Error deleting: '+e);
+    return false;
+  }
 }

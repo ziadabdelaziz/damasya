@@ -52,16 +52,16 @@ const Footer = () => {
                             <span className="ml-2">Damietta, Egypt</span>
                     </div>
                 </span>
-                <span className="inline-block w-full md:w-1/3 mb-8 ml-3 md:ml-0">
+                <span id='footer' className="inline-block w-full md:w-1/3 mb-8 ml-3 md:ml-0">
                     <span className="inline-block pb-2 text-xl text-white">Connect</span>
                     <div>
-                        <a href="">
+                        <a href="https://wa.me/+201020447455">
                             <FaWhatsapp className="inline-block text-4xl mx-1 hover:transition-all duration-300 hover:scale-125 hover:text-app-action" />
                         </a>
-                        <a href="">
+                        {/* <a href="">
                             <FaInstagram className="inline-block text-4xl mx-1 hover:transition-all duration-300 hover:scale-125 hover:text-app-action" />
-                        </a>
-                        <a href="">
+                        </a> */}
+                        <a href="https://www.facebook.com/people/Damasya/100088004101285/">
                             <CiFacebook className="inline-block text-4xl mx-1 hover:transition-all duration-300 hover:scale-125 hover:text-app-action" />
                         </a>
                     </div>

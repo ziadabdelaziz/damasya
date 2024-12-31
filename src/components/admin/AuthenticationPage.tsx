@@ -24,19 +24,24 @@ const AuthenticationPage = () => {
         
         setFormState(FormState.Loading)
         console.log('sent');
-        const isValid = await adminContext.adminSignIn(
-            emailRef.current!.value,
-            passwordRef.current!.value,
-        )
-        console.log('received: '+isValid);
-        if (isValid) {
-            console.log('should navigate');
-            setFormState(FormState.Valid);
-            navigate("/");
-        } else {
-            console.log('won\'t navigate');
+        try {
+            const isValid = await adminContext.adminSignIn(
+                emailRef.current!.value,
+                passwordRef.current!.value,
+            )
+            console.log('received: '+isValid);
+            if (isValid) {
+                console.log('should navigate');
+                setFormState(FormState.Valid);
+                navigate("/");
+            }
+             else {
+                setFormState(FormState.Invalid);
+                alert('Error: Invalid email or password or bad connection');
+            }
+        } catch (e) {
             setFormState(FormState.Invalid);
-            alert('Error: Invalid email or password');
+            alert('Error: '+e);    
         }
     }
 

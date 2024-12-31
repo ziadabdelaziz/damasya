@@ -41,7 +41,7 @@ const AddProductPage = () => {
   } = useAddProductForm();
 
   const categoryOptions = ['sofa', 'l-shape sofa', 'salon', 'bedroom', 'table'];
-  const inputCategory = useLocation().state;
+  const inputCategory: string = useLocation().state;
 
   useEffect(() =>{
     console.log(inputCategory)

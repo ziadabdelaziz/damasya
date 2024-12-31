@@ -5,15 +5,17 @@ import AdminContext from "../../app/context/admin-context";
 import { FaPlus } from "react-icons/fa6";
 import ProductsContext, { ProductsState } from "../../app/context/products-context";
 import { Link } from "react-router-dom";
+import { Product } from "../../models/product";
 
 interface Props {
+    id?: string,
     category: string;
 }
 
 const ProductsList : React.FC<Props> = ({category}) => {
     const adminState = useContext(AdminContext);
     const productsState = useContext<ProductsState>(ProductsContext);
-    const products = productsState.productOfCategory(category);
+    const products: Product[] = productsState.productOfCategory(category);
 
     return (
         <ScrollArea className="my-2 whitespace-nowrap">
@@ -26,21 +28,23 @@ const ProductsList : React.FC<Props> = ({category}) => {
                         </Link>
                     }
                     {
-                        products.map((product) => {
+                        products.map((product:Product) => {
                             console.log(product.name+product.timestamp+' : '+product.imagesUrl[0]);
-                            return <span key={product.id} className="inline-block mr-6 w-36 hover:scale-105 transition-all duration-300">
-                                <img 
-                                    className="object-cover w-full h-36"
-                                    src={product.imagesUrl[0]} alt={product.name} />
-                                <div className="mt-2 text-wrap">
-                                    <span className="inline-block text-sm font-bold uppercase">{product.name}</span>
-                                    <span className="block">{product.price - ((product.price / 100) * product.sale)} LE</span>
-                                    <span className="block line-through text-sm">{product.price} LE</span>
-                                </div>
-                            </span>
+                            return <Link to={'/products/'+product.id} state={product}>
+                                <span key={product.id} className="inline-block mr-6 w-36 hover:scale-105 transition-all duration-300">
+                                    <img
+                                        className="object-cover w-full h-36"
+                                        src={product.imagesUrl[0]} alt={product.name} />
+                                    <div className="mt-2 text-wrap">
+                                        <span className="inline-block text-sm font-bold uppercase">{product.name}</span>
+                                        <span className="block">{product.price - ((product.price / 100) * product.sale)} LE</span>
+                                        <span className="block line-through text-sm">{product.price} LE</span>
+                                    </div>
+                                </span>
+                            </Link>
                         })
                     }
-                    <span className="inline-block mr-6 w-36 hover:scale-105 transition-all duration-300">
+                    {/* <span className="inline-block mr-6 w-36 hover:scale-105 transition-all duration-300">
                         <img 
                             className="object-cover w-full h-36"
                             src={LShapeSofa} alt="Bedroom" />
@@ -69,7 +73,7 @@ const ProductsList : React.FC<Props> = ({category}) => {
                             <span className="block">5000 LE</span>
                             <span className="block line-through text-sm">5000 LE</span>
                         </div>
-                    </span>
+                    </span> */}
                 </div>
             <ScrollBar className="hidden" orientation="horizontal" />
         </ScrollArea>

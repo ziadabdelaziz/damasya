@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { Divide as Hamburger } from 'hamburger-react'
 import { useContext, useState } from 'react';
 import NavMenu from './NavMenu';
@@ -30,7 +31,7 @@ const NavBar = () => {
                         <span className='bg-app-action'></span>
                     </li>
                     <li className='nav-link hover:text-app-action'>
-                        <Link to='/'>Contact</Link>
+                        <HashLink to='#footer'>Contact</HashLink>
                         <span className='bg-app-action'></span>
                     </li>
                     {adminState.isAdmin && 

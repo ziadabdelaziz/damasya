@@ -15,6 +15,7 @@ import ProductsContext, { ProductsState } from './app/context/products-context';
 import { Product } from './models/product';
 import { fetchProducts } from './data/firestore';
 import AddProductPage from './components/addProduct/AddProductPage';
+import ProductDtails from './components/productDetails/PorductDetails';
 
 function App() {
 
@@ -38,10 +39,11 @@ function App() {
               <Route path='/about' element={<About />} />
               <Route path='/admin007' element={<AuthenticationPage />} />
               <Route path='/add-product' element={<AddProductPage />} />
+              <Route path='/products/:productId' element={<ProductDtails />}/>
               <Route path='*' element={<NotFound />} />
             </Routes>
             {
-              !isAdminState && <FloatingWhatsApp phoneNumber='+201060719095' accountName='Damasya' avatar={LogoImage} allowClickAway={true} buttonClassName='bg-green-700' />
+              !isAdminState && <FloatingWhatsApp phoneNumber='+201020447455' accountName='Damasya' avatar={LogoImage} allowClickAway={true} buttonClassName='bg-green-700' />
             }
           </main>
         </div>
