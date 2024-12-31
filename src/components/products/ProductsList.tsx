@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ScrollArea, ScrollBar } from "../home/ScrollArea";
-import LShapeSofa from '@/assets/l-shape-sofa.png';
+// import LShapeSofa from '@/assets/l-shape-sofa.png';
 import AdminContext from "../../app/context/admin-context";
 import { FaPlus } from "react-icons/fa6";
 import ProductsContext, { ProductsState } from "../../app/context/products-context";
