@@ -11,7 +11,10 @@ const About = () => {
     return ( 
         <div>
             <section>
-                <img src={AboutHero} alt="About Damasya" />
+                <img 
+                    src={AboutHero} alt="About Damasya"
+                    className="w-full h-[50vh] sm:h-auto object-cover"
+                />
             </section>
 
             <FeatureSection
@@ -19,7 +22,7 @@ const About = () => {
                 header="Our Services"
                 description="Selling furniture that gives the customer a new experience with our unique designs. Present the one-piece work through a designer who will get the 	placedimensions and customize a wholenew space for the customer with a life experience of 24 years. After-sales service"
                 buttonLabel="Show Now"
-                buttonLink="/proucts/#new"
+                buttonLink="/products/#new"
                 isReverse={false}
              />
 
@@ -28,7 +31,7 @@ const About = () => {
                 header="Our Mission"
                 description="Obtaining our customer satisfaction by producing high-quality products with fashionable models to keep on track with the modern world, so we take care of the smallest details."
                 buttonLabel="Show Now"
-                buttonLink="/proucts/#new"
+                buttonLink="/products/#new"
                 isReverse={true}
              />
 
@@ -37,7 +40,7 @@ const About = () => {
                 header="Our Vision"
                 description="We work with passion, so we expect to be the largest furniture factory in Egypt and have branches all over the world"
                 buttonLabel="Show Now"
-                buttonLink="/proucts/#new"
+                buttonLink="/products/#new"
                 isReverse={false}
              />
 
@@ -46,7 +49,7 @@ const About = () => {
                 header="Our Principles"
                 description="Honesty, Effeciency & Innovation"
                 buttonLabel="Show Now"
-                buttonLink="/proucts/#new"
+                buttonLink="/products/#new"
                 isReverse={true}
              />
              

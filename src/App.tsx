@@ -8,7 +8,7 @@ import NavBar from './components/navigation/NavBar';
 import Home from './components/home/Home';
 import Products from './components/products/Products';
 import About from './components/about/About';
-import LogoImage from '@/assets/logo.jpg';
+import LogoImage from '@/assets/logo.png';
 import AuthenticationPage from './components/admin/AuthenticationPage';
 import NotFound from './components/notFound/NotFound';
 import ProductsContext, { ProductsState } from './app/context/products-context';

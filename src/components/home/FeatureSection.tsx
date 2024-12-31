@@ -15,7 +15,7 @@ const FeatureSection: React.FC<SectionLayout> = ({image, header, description, bu
             <div className={`flex ${isReverse ? 'flex-row-reverse' : 'flex-row'} mx-4 my-8 flex-wrap`}>
                 <span className='relative inline-block shadow-lg shadow-gray-400 w-full md:w-3/5'>
                     <img src={image} alt="chairs"
-                         className='object-cover z-10'
+                         className='object-cover w-full z-10'
                     />
                 </span>
                 <span className='p-5 m-auto md:w-2/5 text-center md:text-left'>
